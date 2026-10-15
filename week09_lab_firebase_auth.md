@@ -775,9 +775,31 @@ service cloud.firestore {
 
 > ✅ **Checkpoint 8.1** ถ่ายภาพหน้าจอผลการทดสอบทั้ง 4 ข้อ 
 
-```text
-บันทึกรูปผลลัพธ์ที่นี่ 
-```
+- **1. ล็อกอินค้างไว้ แล้วปิดแอปทิ้งไปทั้งหมด (ไม่ใช่แค่ย่อ) จากนั้นเปิดแอปใหม่อีกครั้ง**
+  <img width="423" height="712" alt="image" src="https://github.com/user-attachments/assets/6e0a2631-f45c-47da-a3c1-e56f2c8c727a" />
+
+  <img width="376" height="857" alt="image" src="https://github.com/user-attachments/assets/3faca2b0-09a6-4721-9d3f-0953a9659a55" />
+
+
+- **2. ปิด WiFi/Data ของเครื่องให้หมด แล้วลองเปิดแท็บ "รายการโปรด" และ "ร่างของฉัน"**
+  <img width="425" height="792" alt="image" src="https://github.com/user-attachments/assets/a81fb7fc-96e2-46ea-b6cb-5ec6f08b1302" />
+  
+  <img width="371" height="855" alt="image" src="https://github.com/user-attachments/assets/b610242b-32bc-4db4-af87-ad77d4824b6a" />
+
+  <img width="373" height="848" alt="image" src="https://github.com/user-attachments/assets/aab39945-634a-49c6-8be5-fb9caad39dc3" />
+
+
+- **3. ขณะยังปิดเครือข่ายอยู่ ลองกด "โพสต์ขายจริง" กับร่างสักชิ้น**
+  <img width="386" height="857" alt="image" src="https://github.com/user-attachments/assets/3c848fc0-47d3-48ff-b639-630ea23e5bf8" />
+
+  <img width="375" height="856" alt="image" src="https://github.com/user-attachments/assets/eb82297d-dad6-4c6e-a173-8b9ea4f2efdb" />
+
+
+  ไม่สามารถโพสต์ขายได้ เมื่อกดโพสต์ขายระบบจะแสดงว่ากำลังโพสต์ หมุนๆ  แล้วก็กลับมาหน้าเดิม
+
+
+- **4. เปิดเครือข่ายกลับมา แล้วลองกด "โพสต์ขายจริง"**
+<img width="377" height="857" alt="image" src="https://github.com/user-attachments/assets/2b044ac3-b332-4761-b03e-a38efcced8de" />
 
 ---
 
