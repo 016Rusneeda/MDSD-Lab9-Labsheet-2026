@@ -163,9 +163,26 @@ Future<void> main() async {
 
 > ✅ **Checkpoint 2.1** ทดสอบสมัครสมาชิกด้วย Email ใหม่สำเร็จ ถ่ายภาพหน้าจอ Firebase Console เมนู Authentication → Users ที่แสดงบัญชีที่เพิ่งสมัคร จากนั้นทดสอบกรณีผิดพลาด 2 กรณี คือ (ก) สมัครซ้ำด้วย Email เดิม และ (ข) ใส่รหัสผ่านสั้นเกินไป ถ่ายภาพหน้าจอข้อความ Error ทั้งสองกรณี พร้อมอธิบายว่าโค้ดส่วนใดใน `auth_service.dart` เป็นตัวจัดการแต่ละกรณี
 
-```text
-บันทึกรูปผลลัพธ์ที่นี่ และคำอธิบายของแต่ละกรณี
-```
+- **ทดสอบสมัครสมาชิกด้วย Email ใหม่สำเร็จ**
+<img width="382" height="860" alt="image" src="https://github.com/user-attachments/assets/9ae53aca-0cc3-4c03-b62f-c51c256888dd" />
+
+<img width="1917" height="1020" alt="image" src="https://github.com/user-attachments/assets/cb385163-f15d-4800-8843-8a6efa93968e" />
+
+  
+- **ทดสอบกรณีผิดพลาด 2 กรณี**
+- **(ก) สมัครซ้ำด้วย Email เดิม**
+<img width="382" height="867" alt="image" src="https://github.com/user-attachments/assets/4499c933-ed42-4153-a075-4ec43aa67210" />
+
+  
+- **(ข) ใส่รหัสผ่านสั้นเกินไป**
+ <img width="375" height="837" alt="image" src="https://github.com/user-attachments/assets/157266af-f490-4089-b14e-a71e9bf813ed" />
+
+ 
+โค้ดที่จัดการกรณีผิดพลาดทั้ง 2 กรณีนี้ อยู่ในส่วน การใช้คำสั่ง try-catch ภายในเมธอด signUp และเมธอด _handleFirebaseAuthException ในไฟล์ auth_service.dart
+- กรณี (ก) สมัครซ้ำด้วย Email เดิม จัดการโดยโค้ด `case 'email-already-in-use':'`
+- กรณี (ข) รหัสผ่านสั้นเกินไป จัดการโดยโค้ด `case 'weak-password':`
+
+เมื่อเกิดข้อผิดพลาดขึ้น ตัว catch จะดักจับ `FirebaseAuthException` แล้วส่งโค้ด Error ไปให้เมธอดด้านบนทำการแปลภาษาจากรหัสทางเทคนิคให้เป็นข้อความแจ้งเตือนภาษาไทยที่ผู้ใช้เข้าใจ
 
 ---
 
