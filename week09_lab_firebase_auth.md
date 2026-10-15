@@ -544,10 +544,22 @@ Widget build(BuildContext context) {
 
 > ✅ **Checkpoint 4.1** ถ่ายภาพหน้าจอ 3 ภาพเรียงกัน คือ (ก) แอปตอนเพิ่งเปิดขึ้นมาครั้งแรกแบบยังไม่ล็อกอิน แสดงหน้า Login (ข) หลังล็อกอินสำเร็จ แอปสลับไปแสดง `MainScaffold` อัตโนมัติโดยไม่ต้องกดอะไรเพิ่ม และ (ค) หลังกด "ออกจากระบบ" แอปสลับกลับไปหน้า Login เอง อธิบายว่าทำไมการใช้ `StreamBuilder` ฟัง `authStateChanges()` จึงทำให้ไม่ต้องเขียนโค้ดสั่ง Navigate ไปมาเอง
 
+- **(ก) แอปตอนเพิ่งเปิดขึ้นมาครั้งแรกแบบยังไม่ล็อกอิน แสดงหน้า Login**
+<img width="377" height="866" alt="image" src="https://github.com/user-attachments/assets/21492ffa-902c-4e2c-9d22-d97eb0c231d3" />
 
-```text
-บันทึกรูปผลลัพธ์ที่นี่ (3 ภาพ) และคำอธิบาย
-```
+- **(ข) หลังล็อกอินสำเร็จ แอปสลับไปแสดง `MainScaffold` อัตโนมัติโดยไม่ต้องกดอะไรเพิ่ม**
+
+<img width="376" height="867" alt="image" src="https://github.com/user-attachments/assets/75b338c9-4e22-4b31-ab18-5b79df1c77ec" />
+
+- **(ค) หลังกด "ออกจากระบบ" แอปสลับกลับไปหน้า Login เอง**
+
+https://github.com/user-attachments/assets/7d211651-b789-41ba-95f7-c80573affab3
+
+
+- **อธิบายว่าทำไมการใช้ `StreamBuilder` ฟัง `authStateChanges()` จึงทำให้ไม่ต้องเขียนโค้ดสั่ง Navigate ไปมาเอง**
+  
+เพราะ StreamBuilder ทำงานในรูปแบบ Reactive UI ที่คอยฟังการเปลี่ยนแปลงข้อมูลจาก authStateChanges() แบบเรียลไทม์
+เมื่อสถานะการล็อกอินเปลี่ยนไป เช่น ล็อกอินสำเร็จ หรือกดออกจากระบบ StreamBuilder จะตรวจจับค่าใหม่ได้ทันที และทำการ Rebuild ด้วยการสลับ Widget ของหน้าจอให้สอดคล้องกับสถานะปัจจุบันโดยอัตโนมัติ เราจึงไม่ต้องเขียนคำสั่งนำทาง เช่น Navigator.push หรือ Navigator.pop เพื่อเปลี่ยนหน้าเองในโค้ด
 
 ---
 
